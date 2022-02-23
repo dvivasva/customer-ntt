@@ -4,9 +4,11 @@ import com.dvivasva.customer.controller.CustomerController;
 import com.dvivasva.customer.dto.CustomerDto;
 import com.dvivasva.customer.util.DataUtil;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -16,8 +18,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.when;
 
 
-//@RunWith(SpringRunner.class)
-//@ExtendWith(SpringExtension.class)
+@ExtendWith(SpringExtension.class)
 @WebFluxTest(CustomerController.class)
 class CustomerServiceTest {
 
@@ -33,7 +34,7 @@ class CustomerServiceTest {
        StepVerifier.create( DataUtil.getResponseBody(webTestClient,""))
                 .expectSubscription()
                 .expectNextCount(2)
-                .verifyComplete();
+               .verifyComplete();
     }
     @Test
     void create() {

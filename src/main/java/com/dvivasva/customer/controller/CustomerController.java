@@ -16,7 +16,8 @@ public class CustomerController {
 
     @GetMapping("/sms")
     public String getMessage(){
-        return "Hello this is spring with azure :)";
+        var hello="Hello this is spring with azure :)";
+        return hello;
     }
 
 
