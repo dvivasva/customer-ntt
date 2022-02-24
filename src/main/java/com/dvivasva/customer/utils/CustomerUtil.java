@@ -7,12 +7,12 @@ import org.springframework.beans.BeanUtils;
 public class CustomerUtil {
 
     public static CustomerDto entityToDto(Customer customer){
-        var customerDto=new CustomerDto();
+        CustomerDto customerDto=new CustomerDto();
         BeanUtils.copyProperties(customer,customerDto);
         return customerDto;
     }
     public static Customer dtoToEntity(CustomerDto customerDto){
-        var entity=new Customer();
+        Customer entity=new Customer();
         BeanUtils.copyProperties(customerDto,entity);
         return entity;
     }
