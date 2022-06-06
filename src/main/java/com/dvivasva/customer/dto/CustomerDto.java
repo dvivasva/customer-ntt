@@ -8,10 +8,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class CustomerDto {
+    /**
+     * key id.
+     */
     private String id;
+    /**
+     * name.
+     */
     private String name;
+    /**
+     * lastname.
+     */
     private String lastname;
+    /**
+     * dni.
+     */
     private int dni;
-    private String typeCustomer;  // personal or enterprise
-    private String profile; // VID  PYME
+    /**
+     * type customer personal or enterprise.
+     */
+    private String typeCustomer;
+    /**
+     * profile or role VID PYME.
+     */
+    private String profile;
 }

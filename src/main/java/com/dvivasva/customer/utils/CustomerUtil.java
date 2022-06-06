@@ -4,16 +4,25 @@ import com.dvivasva.customer.dto.CustomerDto;
 import com.dvivasva.customer.model.Customer;
 import org.springframework.beans.BeanUtils;
 
-public class CustomerUtil {
-
-    public static CustomerDto entityToDto(Customer customer){
-        var customerDto=new CustomerDto();
-        BeanUtils.copyProperties(customer,customerDto);
+public final class CustomerUtil {
+    private  CustomerUtil() {
+    }
+    /**
+     * @param customer .
+     * @return mono dto.
+     */
+    public static CustomerDto entityToDto(final Customer customer) {
+        var customerDto = new CustomerDto();
+        BeanUtils.copyProperties(customer, customerDto);
         return customerDto;
     }
-    public static Customer dtoToEntity(CustomerDto customerDto){
-        var entity=new Customer();
-        BeanUtils.copyProperties(customerDto,entity);
+    /**
+     * @param customerDto .
+     * @return mono entity.
+     */
+    public static Customer dtoToEntity(final CustomerDto customerDto) {
+        var entity = new Customer();
+        BeanUtils.copyProperties(customerDto, entity);
         return entity;
     }
 
